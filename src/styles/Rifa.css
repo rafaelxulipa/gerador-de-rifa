@@ -1,12 +1,11 @@
 .Rifa {
     display: flex;
     justify-direction: 'row';
+    
 }
-
-.css-rah383 {
-    margin: 5px;
+.tableBackground{
+    margin: 10px;
 }
-
 .tg {
     border-collapse:collapse;
     border-spacing:0;

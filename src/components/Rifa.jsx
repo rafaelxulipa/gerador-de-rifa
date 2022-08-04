@@ -1,9 +1,8 @@
 import ArrayNumbers, { separar } from '../services/ArrayNumbers';
 import '../styles/Rifa.css';
-import BoxSx from './Bloco';
 
 export default function Rifa() {
-    let numbers = ArrayNumbers(0, 7);
+    let numbers = ArrayNumbers(0, 19);
     let numberAux = [];
     //console.log(numbers);
 
@@ -80,7 +79,7 @@ export default function Rifa() {
 
     let itemList = arrTeste.map((item, index) => {
         return (
-            <BoxSx key={index}>
+            <div key={index} className="tableBackground">
                 <div className="tg-wrap">
                     <table className="tg">
                         <thead>
@@ -108,7 +107,8 @@ export default function Rifa() {
                         </tbody>
                     </table>
                 </div>
-            </BoxSx>
+            </div>
+
         )
     })
 
