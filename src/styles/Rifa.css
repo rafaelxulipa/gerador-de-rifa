@@ -1,20 +1,27 @@
 .Rifa {
     display: flex;
     justify-direction: 'row';
+    flex-flow: row wrap; 
     
 }
+
 .tableBackground{
     margin: 10px;
+    border: 1px solid #000000;
+    width: 300px;
+    height: 300px;
+
 }
+
 .tg {
     border-collapse:collapse;
     border-spacing:0;
 }
 
 .tg td{
-    border-color:black;
-    border-style:solid;
-    border-width:1px;
+    //border-color:black;
+    //border-style:solid;
+    //border-width:1px;
     font-family:Arial, sans-serif;
     font-size:14px;
     overflow:hidden;
@@ -23,9 +30,9 @@
 }
 
 .tg th{
-    border-color:black;
-    border-style:solid;
-    border-width:1px;
+    //border-color:black;
+    //border-style:solid;
+    //border-width:1px;
     font-family:Arial, sans-serif;
     font-size:14px;
     font-weight:normal;
@@ -34,9 +41,17 @@
     word-break:normal;
 }
 
-.tg .tg-0lax{
+/* .tg .tg-0lax{
     text-align:left;
     vertical-align:top
+} */
+
+.title {
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
 }
 
 @media screen and (max-width: 767px) {
