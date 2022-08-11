@@ -1,8 +1,9 @@
 .Rifa {
     display: flex;
+    align-items: center;
     justify-direction: 'row';
-    flex-flow: row wrap; 
-    
+    justify-content: center;
+    flex-flow: row wrap;     
 }
 
 .tableBackground{
@@ -10,7 +11,6 @@
     border: 1px solid #000000;
     width: 300px;
     height: 300px;
-
 }
 
 .tg {
@@ -27,6 +27,7 @@
     overflow:hidden;
     padding:10px 5px;
     word-break:normal;
+    text-align: center;
 }
 
 .tg th{
@@ -39,12 +40,18 @@
     overflow:hidden;
     padding:10px 5px;
     word-break:normal;
+    text-align: center;
 }
 
 /* .tg .tg-0lax{
     text-align:left;
     vertical-align:top
 } */
+
+.tableGeneral {
+    width: 300px;
+    height: 300px;
+}
 
 .title {
     text-align: center;
