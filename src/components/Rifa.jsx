@@ -1,8 +1,10 @@
 import ArrayNumbers, { separar } from '../services/ArrayNumbers';
 import '../styles/Rifa.css';
 
-export default function Rifa() {
-    let numbers = ArrayNumbers(0, 99);
+export default function Rifa(props) {
+    const finalNumber  = props.value;
+
+    let numbers = ArrayNumbers(0, finalNumber.number);
     let numberAux = [];
 
     numbers.forEach(element => {
@@ -41,13 +43,13 @@ export default function Rifa() {
                     <table className="tg tableGeneral">
                         <thead>
                             <tr>
-                                <th className="tg-0lax title" colSpan="2">TÍTULO</th>
+                                <th className="tg-0lax title" colSpan="2">{finalNumber.title}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td className="tg-0lax numbers">{item.number1}</td>
-                                <td className="tg-0lax text" rowSpan="4">TEXTO DA RIFA</td>
+                                <td className="tg-0lax text" rowSpan="4">{finalNumber.text}</td>
                             </tr>
                             <tr>
                                 <td className="tg-0lax numbers">{item.number2}</td>
@@ -59,7 +61,7 @@ export default function Rifa() {
                                 <td className="tg-0lax numbers">{item.number4}</td>
                             </tr>
                             <tr>
-                                <td className="tg-0lax footer" colSpan="2">rodapé</td>
+                                <td className="tg-0lax footer" colSpan="2">{finalNumber.footer}</td>
                             </tr>
                         </tbody>
                     </table>
