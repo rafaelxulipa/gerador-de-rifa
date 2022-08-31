@@ -68,7 +68,7 @@ export default function Home() {
     if (event.nativeEvent.inputType === 'insertText' || event.nativeEvent.inputType === 'insertFromPaste') {
       setMaxTitle(maxTitle - event.target.value.length);
     } else {
-      event.target.value.length === 0 ? setMaxTitle(1000) : setMaxTitle(maxTitle + 1);
+      event.target.value.length === 0 ? setMaxTitle(25) : setMaxTitle(maxTitle + 1);
     }
     setTitulo(event.target.value);
     setValuesObj({
@@ -95,7 +95,7 @@ export default function Home() {
     if (event.nativeEvent.inputType === 'insertText' || event.nativeEvent.inputType === 'insertFromPaste') {
       setMaxRodape(maxRifaText - event.target.value.length);
     } else {
-      event.target.value.length === 0 ? setMaxRodape(1000) : setMaxRodape(maxRodape + 1);
+      event.target.value.length === 0 ? setMaxRodape(25) : setMaxRodape(maxRodape + 1);
     }
     setRodape(event.target.value);
     setValuesObj({
