@@ -49,6 +49,9 @@ export default function Home() {
   const [rodape, setRodape] = useState("");
   const [rifaTexto, setRifaTexto] = useState("");
   const [type, setType] = useState("");
+  const [maxTitle, setMaxTitle] = useState(25);
+  const [maxRodape, setMaxRodape] = useState(25);
+  const [maxRifaText, setMaxRifaText] = useState(1000);
 
   const handleChangeType = (event) => {
     setType(event.target.value);
@@ -62,6 +65,11 @@ export default function Home() {
   };
 
   const handleChangeTitulo = (event) => {
+    if (event.nativeEvent.inputType === 'insertText') {
+      setMaxTitle(maxTitle - 1);
+    } else {
+      setMaxTitle(maxTitle + 1);
+    }
     setTitulo(event.target.value);
     setValuesObj({
       title: titulo,
@@ -84,6 +92,11 @@ export default function Home() {
   };
 
   const handleChangeRodape = (event) => {
+    if (event.nativeEvent.inputType === 'insertText') {
+      setMaxRodape(maxRodape - 1);
+    } else {
+      setMaxRodape(maxRodape + 1);
+    }
     setRodape(event.target.value);
     setValuesObj({
       title: titulo,
@@ -95,6 +108,12 @@ export default function Home() {
   };
 
   const handleChangeRifaTexto = (event) => {
+    if (event.nativeEvent.inputType === 'insertText' || event.nativeEvent.inputType === 'insertFromPaste') {
+      setMaxRifaText(maxRifaText - event.target.value.length);
+    } else {
+      event.target.value.length === 0 ? setMaxRifaText(1000) : setMaxRifaText(maxRifaText + 1);
+    }
+
     setRifaTexto(event.target.value);
     setValuesObj({
       title: titulo,
@@ -130,7 +149,7 @@ export default function Home() {
         <img src={logo} className="App-logo" alt="logo" />
         <img src={name} className="name" alt="name" />
       </header>
-      <div className="inputs">      
+      <div className="inputs">
         <TextField
           id="outlined-select"
           select
@@ -168,7 +187,7 @@ export default function Home() {
           inputProps={{
             maxLength: 25,
           }}
-          helperText="Máximo de 25 caracteres"
+          helperText={`Máximo de ${maxTitle} caracteres`}
           value={titulo}
           onChange={handleChangeTitulo}
         />
@@ -180,7 +199,7 @@ export default function Home() {
           inputProps={{
             maxLength: 25,
           }}
-          helperText="Máximo de 25 caracteres"
+          helperText={`Máximo de ${maxRodape} caracteres`}
           value={rodape}
           onChange={handleChangeRodape}
         />
@@ -193,7 +212,7 @@ export default function Home() {
           inputProps={{
             maxLength: 1000,
           }}
-          helperText="Máximo de 1000 caracteres"
+          helperText={`Máximo de ${maxRifaText} caracteres`}
           value={rifaTexto}
           onChange={handleChangeRifaTexto}
         />
