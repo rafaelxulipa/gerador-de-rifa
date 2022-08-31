@@ -65,7 +65,9 @@ export default function Home() {
   };
 
   const handleChangeTitulo = (event) => {
-    if (event.nativeEvent.inputType === 'insertText' || event.nativeEvent.inputType === 'insertFromPaste') {
+    if (event.nativeEvent.inputType === 'insertText') {
+      setMaxTitle(maxTitle - 1);
+    }  else if(event.nativeEvent.inputType === 'insertFromPaste') {
       setMaxTitle(maxTitle - event.target.value.length);
     } else {
       event.target.value.length === 0 ? setMaxTitle(25) : setMaxTitle(maxTitle + 1);
@@ -92,8 +94,10 @@ export default function Home() {
   };
 
   const handleChangeRodape = (event) => {
-    if (event.nativeEvent.inputType === 'insertText' || event.nativeEvent.inputType === 'insertFromPaste') {
-      setMaxRodape(maxRifaText - event.target.value.length);
+    if (event.nativeEvent.inputType === 'insertText') {
+      setMaxRodape(maxRodape - 1);
+    } else if(event.nativeEvent.inputType === 'insertFromPaste') {      
+      setMaxRodape(maxRodape - event.target.value.length);
     } else {
       event.target.value.length === 0 ? setMaxRodape(25) : setMaxRodape(maxRodape + 1);
     }
@@ -108,7 +112,9 @@ export default function Home() {
   };
 
   const handleChangeRifaTexto = (event) => {
-    if (event.nativeEvent.inputType === 'insertText' || event.nativeEvent.inputType === 'insertFromPaste') {
+    if (event.nativeEvent.inputType === 'insertText') {
+      setMaxRifaText(maxRifaText - 1);
+    } else if (event.nativeEvent.inputType === 'insertFromPaste'){
       setMaxRifaText(maxRifaText - event.target.value.length);
     } else {
       event.target.value.length === 0 ? setMaxRifaText(1000) : setMaxRifaText(maxRifaText + 1);
