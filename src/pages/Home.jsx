@@ -163,22 +163,22 @@ export default function Home() {
         <img src={name} className="name" alt="name" />
         {/*ads with no set-up*/}
         <AdSense.Google client="ca-pub-0079702856690089" slot="7030517114" />
-        {/*ads with custom format*/}
+        {/*ads with custom format
         <AdSense.Google
           client="ca-pub-0079702856690089"
           slot="7030517114"
           style={{ width: 500, height: 300, float: "left" }}
           format=""
-        />
-        {/*responsive and native ads*/}
+        />*/}
+        {/*responsive and native ads
         <AdSense.Google
           client="ca-pub-0079702856690089"
           slot="7030517114"
           style={{ display: "block" }}
           layout="in-article"
           format="fluid"
-        />
-        {/*auto full width responsive ads*/}
+        />*/}
+        {/*auto full width responsive ads
         <AdSense.Google
           client="ca-pub-0079702856690089"
           slot="7030517114"
@@ -186,7 +186,7 @@ export default function Home() {
           format="auto"
           responsive="true"
           layoutKey="-gw-1+2a-9x+5c"
-        />
+        />*/}
       </header>
       <div className="inputs">
         <TextField
