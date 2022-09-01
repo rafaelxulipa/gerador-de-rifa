@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from "../images/logoSolo.png";
 import name from "../images/OR.png";
 import "../styles/Home.css";
@@ -6,6 +7,7 @@ import { useState } from "react";
 import RifaUm from "../components/RifaUm";
 import RifaDois from "../components/RifaDois";
 import RifaQuatro from "../components/RifaQuatro";
+import AdSense from "react-adsense";
 
 const rifaTypes = [
   {
@@ -65,12 +67,14 @@ export default function Home() {
   };
 
   const handleChangeTitulo = (event) => {
-    if (event.nativeEvent.inputType === 'insertText') {
+    if (event.nativeEvent.inputType === "insertText") {
       setMaxTitle(maxTitle - 1);
-    }  else if(event.nativeEvent.inputType === 'insertFromPaste') {
+    } else if (event.nativeEvent.inputType === "insertFromPaste") {
       setMaxTitle(maxTitle - event.target.value.length);
     } else {
-      event.target.value.length === 0 ? setMaxTitle(25) : setMaxTitle(maxTitle + 1);
+      event.target.value.length === 0
+        ? setMaxTitle(25)
+        : setMaxTitle(maxTitle + 1);
     }
     setTitulo(event.target.value);
     setValuesObj({
@@ -94,12 +98,14 @@ export default function Home() {
   };
 
   const handleChangeRodape = (event) => {
-    if (event.nativeEvent.inputType === 'insertText') {
+    if (event.nativeEvent.inputType === "insertText") {
       setMaxRodape(maxRodape - 1);
-    } else if(event.nativeEvent.inputType === 'insertFromPaste') {      
+    } else if (event.nativeEvent.inputType === "insertFromPaste") {
       setMaxRodape(maxRodape - event.target.value.length);
     } else {
-      event.target.value.length === 0 ? setMaxRodape(25) : setMaxRodape(maxRodape + 1);
+      event.target.value.length === 0
+        ? setMaxRodape(25)
+        : setMaxRodape(maxRodape + 1);
     }
     setRodape(event.target.value);
     setValuesObj({
@@ -112,12 +118,14 @@ export default function Home() {
   };
 
   const handleChangeRifaTexto = (event) => {
-    if (event.nativeEvent.inputType === 'insertText') {
+    if (event.nativeEvent.inputType === "insertText") {
       setMaxRifaText(maxRifaText - 1);
-    } else if (event.nativeEvent.inputType === 'insertFromPaste'){
+    } else if (event.nativeEvent.inputType === "insertFromPaste") {
       setMaxRifaText(maxRifaText - event.target.value.length);
     } else {
-      event.target.value.length === 0 ? setMaxRifaText(1000) : setMaxRifaText(maxRifaText + 1);
+      event.target.value.length === 0
+        ? setMaxRifaText(1000)
+        : setMaxRifaText(maxRifaText + 1);
     }
 
     setRifaTexto(event.target.value);
@@ -140,13 +148,12 @@ export default function Home() {
 
   function rifas() {
     if (parseInt(type) === 1) {
-      return (<RifaUm value={valuesObj} />)
+      return <RifaUm value={valuesObj} />;
     } else if (parseInt(type) === 2) {
-      return (<RifaDois value={valuesObj} />)
+      return <RifaDois value={valuesObj} />;
     } else if (parseInt(type) === 4) {
-      return (<RifaQuatro value={valuesObj} />)
+      return <RifaQuatro value={valuesObj} />;
     }
-
   }
 
   return (
@@ -154,6 +161,32 @@ export default function Home() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <img src={name} className="name" alt="name" />
+        {/*ads with no set-up*/}
+        <AdSense.Google client="ca-pub-0079702856690089" slot="7030517114" />
+        {/*ads with custom format*/}
+        <AdSense.Google
+          client="ca-pub-0079702856690089"
+          slot="7030517114"
+          style={{ width: 500, height: 300, float: "left" }}
+          format=""
+        />
+        {/*responsive and native ads*/}
+        <AdSense.Google
+          client="ca-pub-0079702856690089"
+          slot="7030517114"
+          style={{ display: "block" }}
+          layout="in-article"
+          format="fluid"
+        />
+        {/*auto full width responsive ads*/}
+        <AdSense.Google
+          client="ca-pub-0079702856690089"
+          slot="7030517114"
+          style={{ display: "block" }}
+          format="auto"
+          responsive="true"
+          layoutKey="-gw-1+2a-9x+5c"
+        />
       </header>
       <div className="inputs">
         <TextField
