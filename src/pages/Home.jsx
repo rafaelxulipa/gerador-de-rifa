@@ -8,6 +8,7 @@ import RifaUm from "../components/RifaUm";
 import RifaDois from "../components/RifaDois";
 import RifaQuatro from "../components/RifaQuatro";
 import AdSense from "react-adsense";
+import GoogleAd from '../components/GoogleAds';
 
 const rifaTypes = [
   {
@@ -156,13 +157,14 @@ export default function Home() {
     }
   }
 
+  
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <img src={name} className="name" alt="name" />
-        {/*ads with no set-up*/}
-        <AdSense.Google client="ca-pub-0079702856690089" slot="7030517114" />
+        {/*ads with no set-up
+        <AdSense.Google client="ca-pub-0079702856690089" slot="2863852668" />*/}
         {/*ads with custom format
         <AdSense.Google
           client="ca-pub-0079702856690089"
@@ -181,12 +183,12 @@ export default function Home() {
         {/*auto full width responsive ads
         <AdSense.Google
           client="ca-pub-0079702856690089"
-          slot="7030517114"
+          slot="2863852668"
           style={{ display: "block" }}
           format="auto"
           responsive="true"
           layoutKey="-gw-1+2a-9x+5c"
-        />*/}
+          />*/}
       </header>
       <div className="inputs">
         <TextField
@@ -289,6 +291,15 @@ export default function Home() {
           LIMPAR
         </Button>
       </div>
+
+      <div>
+      	<GoogleAd slot="2863852668" classNames="page-top" />
+      	<div>Page Content...</div>
+        <GoogleAd slot="2863852668" timeout={1000} classNames="page-bottom" />
+      	<div>Page Content...</div>
+      </div>
+
+      <AdSense.Google client="ca-pub-0079702856690089" slot="2863852668" />
 
       <div id="rifaList" className="rifaList">
         {rifas()}
