@@ -7,8 +7,8 @@ import { useState } from "react";
 import RifaUm from "../components/RifaUm";
 import RifaDois from "../components/RifaDois";
 import RifaQuatro from "../components/RifaQuatro";
-import AdSense from "react-adsense";
-import GoogleAd from '../components/GoogleAds';
+// import AdSense from "react-adsense";
+// import GoogleAd from '../components/GoogleAds';
 
 const rifaTypes = [
   {
@@ -292,14 +292,14 @@ export default function Home() {
         </Button>
       </div>
 
-      <div>
+      {/* <div>
       	<GoogleAd slot="2863852668" classNames="page-top" />
       	<div>Page Content...</div>
         <GoogleAd slot="2863852668" timeout={1000} classNames="page-bottom" />
       	<div>Page Content...</div>
-      </div>
+      </div> */}
 
-      <AdSense.Google client="ca-pub-0079702856690089" slot="2863852668" />
+      {/* <AdSense.Google client="ca-pub-0079702856690089" slot="2863852668" /> */}
 
       <div id="rifaList" className="rifaList">
         {rifas()}
